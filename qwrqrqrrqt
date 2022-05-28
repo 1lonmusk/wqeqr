@@ -1,0 +1,83 @@
+import random
+a = "Ｏ"
+b = "Ｘ"
+n = ["*","*","*","*","*","*","*","*","*"]
+
+def ttt():
+    print(n[0]  +   "│"  +  n[1]  +  "│"   +  n[2])
+    print("─────")
+    print(n[3]  +   "│"  +  n[4]  +  "│"   +  n[5])
+    print("─────")
+    print(n[6]  +   "│"  +  n[7]  +  "│"   +  n[8])
+ttt()
+
+
+
+def win(n,ox):
+    if n[0] == n[1] == n[2] == ox:
+       print("양승리")
+       return 1
+    elif n[3] == n[4] == n[5] == ox:
+        print("양승리")
+    elif n[6] == n[7] == n[8] == ox:
+        print("양승리")
+    elif n[0] == n[3] == n[6] == ox:
+        print("양승리")
+    elif n[1] == n[4] == n[7] == ox:
+        print("양승리")
+    elif n[2] == n[5] == n[8] == ox:
+        print("양승리")
+    elif n[0] == n[4] == n[8] == ox:
+        print("양승리")
+    elif n[2] == n[4] == n[6] == ox:
+        print("양승리")
+
+
+
+def lose(ox):
+    if n[0] == n[1] == n[2] == ox:
+        print("패배")
+    elif n[3] == n[4] == n[5] == ox:
+        print("패배")
+    elif n[6] == n[7] == n[8] == ox:
+        print("패배")
+    elif n[0] == n[3] == n[6] == ox:
+        print("패배")
+    elif n[1] == n[4] == n[7] == ox:
+        print("패배")
+    elif n[2] == n[5] == n[8] == ox:
+        print("패배")
+    elif n[0] == n[4] == n[8] == ox:
+        print("패배")
+    elif n[2] == n[4] == n[6] == ox:
+        print("패배")
+
+for i in range(0,8):
+    while True:
+        while True:
+            p = int(input())
+            if n[p] == '*':
+                n[p] = a
+                break
+        ttt()
+        if win(n,a) == 1:
+            break
+
+    while True:
+        while True:
+            c =random.randrange(0,10)
+            if n[p] == '*':
+                n[p] = a
+                break
+        ttt()
+        if win(n,a) == 1:
+            break
+ while True:
+        while True:
+            p = int(input())
+            if n[p] == '*':
+                n[p] = a
+                break
+        ttt()
+        if win(n,a) == 1:
+            break
